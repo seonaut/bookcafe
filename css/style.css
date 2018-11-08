@@ -2094,7 +2094,6 @@ output {
     width: 100%;
     height: 43px;
     padding: 8px 16px;
-	
     background-color: #eee;
     background-image: none;
     border: 1px solid transparent;
@@ -5408,9 +5407,9 @@ button.close {
 }
 
 body {
-    background-image: -webkit-linear-gradient(top, #cbccbd, #c1b8a3);
-    background-image: -o-linear-gradient(top, #cbccbd 0, #c1b8a3 100%);
-    background-image: linear-gradient(180deg, #cbccbd 0, #c1b8a3);
+    background-image: -webkit-linear-gradient(top, #ff0060, #ff6975);
+    background-image: -o-linear-gradient(top, #ff0060 0, #ff6975 100%);
+    background-image: linear-gradient(180deg, #ff0060 0, #ff6975);
     background-repeat: repeat-x;
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#FFFF0060", endColorstr="#FFFF6975", GradientType=0)
 }
@@ -5463,7 +5462,7 @@ body.white {
     left: 0;
     right: 0;
     bottom: 30%;
-    box-shadow: inset 0 -40px 60px 10px #cbccbd
+    box-shadow: inset 0 -40px 60px 10px #ff0060
 }
 
 .card {
@@ -5770,225 +5769,3 @@ label {
 
 
 /*# sourceMappingURL=main.bc58148c.map*/
-
-#preferiti {
-    position: fixed;
-    top: 3%;
-    right: 3%;
-    z-index: 999999;
-}
-
-.floating-form {
-  width:80%;
-}
-
-/****  floating-Lable style start ****/
-.floating-label { 
-  position:relative; 
-  margin-bottom:20px; 
-}
-.floating-input , .floating-select {
-  font-size:14px;
-  padding:4px 4px;
-  display:block;
-  width:100%;
-  height:30px;
-  background-color: transparent;
-  border:none;
-  border-bottom:1px solid #757575;
-}
-
-.floating-input:focus , .floating-select:focus {
-     outline:none;
-     border-bottom:2px solid #5264AE; 
-}
-
-label {
-  color:#999; 
-  font-size:14px;
-  font-weight:normal;
-  position:absolute;
-  pointer-events:none;
-  left:5px;
-  top:5px;
-  transition:0.2s ease all; 
-  -moz-transition:0.2s ease all; 
-  -webkit-transition:0.2s ease all;
-}
-
-.floating-input:focus ~ label, .floating-input:not(:placeholder-shown) ~ label {
-  top:-18px;
-  font-size:14px;
-  color:#5264AE;
-}
-
-.floating-select:focus ~ label , .floating-select:not([value=""]):valid ~ label {
-  top:-18px;
-  font-size:14px;
-  color:#5264AE;
-}
-
-/* active state */
-.floating-input:focus ~ .bar:before, .floating-input:focus ~ .bar:after, .floating-select:focus ~ .bar:before, .floating-select:focus ~ .bar:after {
-  width:50%;
-}
-
-*, *:before, *:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.floating-textarea {
-   min-height: 30px;
-   max-height: 260px; 
-   overflow:hidden;
-  overflow-x: hidden; 
-}
-
-/* highlighter */
-.highlight {
-  position:absolute;
-  height:50%; 
-  width:100%; 
-  top:15%; 
-  left:0;
-  pointer-events:none;
-  opacity:0.5;
-}
-
-/* active state */
-.floating-input:focus ~ .highlight , .floating-select:focus ~ .highlight {
-  -webkit-animation:inputHighlighter 0.3s ease;
-  -moz-animation:inputHighlighter 0.3s ease;
-  animation:inputHighlighter 0.3s ease;
-}
-
-/* animation */
-@-webkit-keyframes inputHighlighter {
-	from { background:#5264AE; }
-  to 	{ width:0; background:transparent; }
-}
-@-moz-keyframes inputHighlighter {
-	from { background:#5264AE; }
-  to 	{ width:0; background:transparent; }
-}
-@keyframes inputHighlighter {
-	from { background:#5264AE; }
-  to 	{ width:0; background:transparent; }
-}
-
-/****  floating-Lable style end ****/
-
-/* Modal per scheda libro
- * =============================== */
-.modal {
-  opacity: 0;
-  visibility: hidden;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  text-align: left;
-  background: rgba(0,0,0, .9);
-  transition: opacity .25s ease;
-}
-
-.modal__bg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  cursor: pointer;
-}
-
-.modal-state {
-  display: none;
-}
-
-.modal-state:checked + .modal {
-  opacity: 1;
-  visibility: visible;
-}
-
-.modal-state:checked + .modal .modal__inner {
-  top: 0;
-}
-
-.modal__inner {
-  transition: top .25s ease;
-  position: absolute;
-  top: -20%;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 50%;
-  margin: auto;
-  overflow: auto;
-  background: #fff;
-  border-radius: 5px;
-  padding: 1em 2em;
-  height: 50%;
-}
-
-.modal__close {
-  position: absolute;
-  right: 1em;
-  top: 1em;
-  width: 1.1em;
-  height: 1.1em;
-  cursor: pointer;
-}
-
-.modal__close:after,
-.modal__close:before {
-  content: '';
-  position: absolute;
-  width: 2px;
-  height: 1.5em;
-  background: #ccc;
-  display: block;
-  transform: rotate(45deg);
-  left: 50%;
-  margin: -3px 0 0 -1px;
-  top: 0;
-}
-
-.modal__close:hover:after,
-.modal__close:hover:before {
-  background: #aaa;
-}
-
-.modal__close:before {
-  transform: rotate(-45deg);
-}
-
-@media screen and (max-width: 768px) {
-	
-  .modal__inner {
-    width: 90%;
-    height: 90%;
-    box-sizing: border-box;
-  }
-}
-
-
-/* CSS per tabella */
-.tabella_responsiva{
-	overflow-x:auto;
-}
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    border: 1px solid #ddd;
-}
-
-th, td {
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even){background-color: #f2f2f2}
