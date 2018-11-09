@@ -1,15 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700|Oswald);
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
-
-/*!
- * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
-
-
-/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-
 html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
@@ -19,7 +7,6 @@ html {
 body {
     margin: 0
 }
-
 
 footer,
 header,
@@ -39,9 +26,6 @@ h1 {
 img {
     border: 0
 }
-
-
-/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 
 @media print {
     *,
@@ -84,7 +68,7 @@ html {
 }
 
 body {
-    font-family: Lato, Helvetica, Arial, sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 16px;
     line-height: 1.58;
     color: #555;
@@ -113,7 +97,7 @@ h1,
 h2,
 h3,
 h5 {
-    font-family: Oswald, Helvetica, Arial, sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-weight: 400;
     line-height: 1.1;
     color: #000
@@ -214,7 +198,6 @@ p {
     clear: both
 }
 
-
 .col-md-4,
 .col-md-8,
 .col-xs-12 {
@@ -223,7 +206,6 @@ p {
     padding-left: 15px;
     padding-right: 15px
 }
-
 
 .col-xs-12 {
     float: left
@@ -234,7 +216,6 @@ p {
 }
 
 @media (min-width:992px) {
-    
     .col-md-4,
     .col-md-8 {
         float: left
@@ -252,13 +233,12 @@ p {
 }
 
 body {
-    background-image: -webkit-linear-gradient(top, #ff0060, #ff6975);
-    background-image: -o-linear-gradient(top, #ff0060 0, #ff6975 100%);
-    background-image: linear-gradient(180deg, #ff0060 0, #ff6975);
+    background-image: -webkit-linear-gradient(top, #008080, #329999);
+    background-image: -o-linear-gradient(top, #008080 0, #329999 100%);
+    background-image: linear-gradient(180deg, #008080 0, #329999);
     background-repeat: repeat-x;
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#FFFF0060", endColorstr="#FFFF6975", GradientType=0)
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#FF008080", endColorstr="#FF329999", GradientType=0)
 }
-
 
 .white-text-container h1,
 .white-text-container h2,
@@ -292,7 +272,7 @@ body {
     left: 0;
     right: 0;
     bottom: 30%;
-    box-shadow: inset 0 -40px 60px 10px #ff0060
+    box-shadow: inset 0 -40px 60px 10px #008080
 }
 
 .card {
@@ -320,9 +300,208 @@ body {
 
 .h5,
 h5 {
-    font-family: Lato, Helvetica, Arial, sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-weight: 700
 }
 
+/* Un po' di stile per i bottoni */
 
-/*# sourceMappingURL=main.bc58148c.map*/
+.button {
+		font-family: 'Raleway', sans-serif;
+  border-radius: 90px;
+  background-color: #F08700;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-size: 1em;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button:hover {
+	background-color: #f19319;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+	font-family: FontAwesome;
+  content: '\f004';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/* Bottone flottante */
+#preferiti {
+    position: fixed;
+    top: 3%;
+    right: 3%;
+    z-index: 999999;
+}
+
+@media (max-width: 768px) {
+#preferiti {
+    position: fixed;
+	top: auto;
+    bottom: 3%;
+    right: 3%;
+    z-index: 999999;
+}
+}
+
+/* Floating label per box di ricerca */
+.floating-form {
+  width:100%;
+}
+
+.floating-label { 
+  position:relative; 
+  margin-bottom:20px; 
+}
+.floating-input , .floating-select {
+  font-size:16px;
+  font-family: 'Raleway', sans-serif;
+  padding:4px 4px;
+  display:block;
+  width:100%;
+  height:30px;
+  background-color: transparent;
+  border:none;
+  border-bottom:1px solid #000;
+}
+
+.floating-input:focus , .floating-select:focus {
+     outline:none;
+     border-bottom:2px solid #F08700; 
+}
+
+label {
+  color:#000; 
+  font-size:14px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:5px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+.floating-input:focus ~ label, .floating-input:not(:placeholder-shown) ~ label {
+  top:-18px;
+  font-size:14px;
+  font-weight: bold;
+  color:#F08700;
+}
+
+.floating-select:focus ~ label , .floating-select:not([value=""]):valid ~ label {
+  top:-18px;
+  font-size:14px;
+  font-weight: bold;
+  color:#F08700;
+}
+
+.floating-input:focus ~ .bar:before, .floating-input:focus ~ .bar:after, .floating-select:focus ~ .bar:before, .floating-select:focus ~ .bar:after {
+  width:50%;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.floating-textarea {
+   min-height: 30px;
+   max-height: 260px; 
+   overflow:hidden;
+  overflow-x: hidden; 
+}
+
+.highlight {
+  position:absolute;
+  height:50%; 
+  width:100%; 
+  top:15%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+.floating-input:focus ~ .highlight , .floating-select:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+
+/* Pulsante di chiusura a destra */
+.close {
+	float:right;
+	font-size: 80%;
+}
+
+/* Restringi margini di ricerca quando box novità viene chiuso */
+@media (min-width: 768px) {
+.margini-ristretti {
+	padding-right: 20%;
+	padding-left: 20%;
+}
+}
+
+/* Introduci un po' di padding-left al box novità su schermi larghi */
+@media (min-width: 768px) {
+#target {
+	padding-left: 10%;
+}
+}
+
+/* Introduci un po' di padding-top al box novità su schermi piccoli */
+@media (max-width: 768px) {
+#target {
+	padding-top: 10%;
+}
+}
+
+/* Stile link */
+a {
+    color: #000;
+}
+a:hover {
+    color: #f19319;
+}
