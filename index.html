@@ -2,38 +2,184 @@
 <html lang="it">
 
 <head>
-  <meta charset="UTF-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
-  <meta content="description" name="description">
-  <meta name="google" content="notranslate" />
-  <meta content="Mashup templates have been developped by Orson.io team" name="author">
 
-  <!-- Disable tap highlight on IE -->
-  <meta name="msapplication-tap-highlight" content="no">
-  
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
-  <link href="./assets/favicon.ico" rel="icon">
+  <!-- Informazioni basilari -->
+	<meta charset="utf-8">
+	<title>Interrogazione database Book Café</title>
+	<meta name="description" content="Interrogazione database Book Café">
+	<meta name="author" content="Book Café">
+	
+	<!-- Disabilita un po' di cose per IE -->
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta name="msapplication-tap-highlight" content="no">
+	
+	<!-- Meta specifico per mobile -->
+	<meta content="width=device-width,initial-scale=1" name="viewport">
 
-  <title>Title page</title>  
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" href="./assets/images/favicon.png">
 
-<link href="css/style.css" rel="stylesheet"></head>
+	<!-- CSS -->
+	<link href="./css/style.css" rel="stylesheet">
+	
+	<!-- Aggiungi Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	
+	<!-- Importa font Raleway -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600" rel="stylesheet">
 
-<body class="">
+	<!-- Aggiungi JQuery -->
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
-<!-- Add your content of header -->
-<div class="background-color-layer" style="background-image: url('assets/images/img-01.jpg')"
-></div>
-<main class="content-wrapper">
-  <header class="white-text-container section-container">
-    <div class="text-center">
-      <h1>I am David Folley</h1>
-      <p>Web designer</p>
-    </div>
-  </header>
+</head>
+
+<body>
+
+	<!-- Header -->
+	<div class="background-color-layer" style="background-image: url('assets/images/library.jpg')">
+	</div>
+	<main class="content-wrapper">
+	<header class="white-text-container section-container">
+		<div class="text-center">
+		<h1>Database Book Café</h1>
+		</div>
+	</header>
+
+	<!-- Bottone preferiti flottante -->
+	<div id="preferiti">
+		<a href="./preferiti.php?key=<?php echo $key;?>">
+		<button class="button"><span>Preferiti</span></button>
+		</a>
+	</div>
+	
+	<!-- Primo blocco: ricerca e novità -->
+ 
+	<div class="container">
+	
+	<div class="row">
+    <div class="col-xs-12">
+	<div class="card">
+    <div class="card-block">
+	<div class="row">
+
+	<!-- Form ricerca -->
+
+	 <div id="espandi" class="col-md-4">
+		<h2>Ricerca <span id="conteggio"></span></h2>
+		<div class="floating-form">
+			<div class="floating-label">      
+			<input class="floating-input" type="text" placeholder=" " id="autore">
+			<span class="highlight"></span>
+			<label>Autore</label>
+			</div>
+			<div class="floating-label">      
+			<input class="floating-input" type="text" placeholder=" " id="titolo">
+			<span class="highlight"></span>
+			<label>Titolo</label>
+			</div>
+			<div class="floating-label">      
+			<input class="floating-input" type="text" placeholder=" " id="serie">
+			<span class="highlight"></span>
+			<label>Serie</label>
+			</div>
+			<div class="floating-label">  
+			<select class="floating-select" onclick="this.setAttribute('value', this.value);" value="" id="genere1">
+				<option value=""></option>
+			<?php
+		$result=$biblio->query("select distinct(Tags) from titoli order by Tags");
+		While($line=$result->fetch_array()){
+			$l=$line[0];		
+			echo "<option value=\"$l\">$l</option>\n";
+		}
+?>	
+			</select>
+			<span class="highlight"></span>
+			<label>Genere</label>
+			</div>
+			<div class="floating-label">      
+			<input class="floating-input" type="text" placeholder=" " id="editore">
+			<span class="highlight"></span>
+			<label>Editore</label>
+			</div>
+			<div class="floating-label">  
+			<select class="floating-select" onclick="this.setAttribute('value', this.value);" value="" id="collana1">
+				<?php
+		$result=$biblio->query("select distinct(dcollana) from titoli order by dcollana");
+		While($line=$result->fetch_array()){
+			$l=$line[0];		
+			echo "<option value=\"$l\">$l</option>\n";
+		}
+?>
+			</select>
+			<span class="highlight"></span>
+			<label>Collana</label>
+			</div>
+			<div class="floating-label">  
+			<select class="floating-select" onclick="this.setAttribute('value', this.value);" value="" id="biblioteca">
+				<?php
+		$result=$biblio->query("select distinct(biblioteca) from titoli order by biblioteca");
+		While($line=$result->fetch_array()){
+			$l=$line[0];		
+			echo "<option value=\"$l\">$l</option>\n";
+		}
+?>
+			</select>
+			<span class="highlight"></span>
+			<label>Biblioteca</label>
+			</div>
+			<div class="floating-label">      
+			<input class="floating-input" type="text" placeholder=" " id="info">
+			<span class="highlight"></span>
+			<label>Info (usa separatore +)</label>
+			</div>
+			<div class="floating-label">
+			<input class="floating-input" type="text" onclick="(this.value='<?php echo $primadata;?>')" id="da_data" placeholder=" ">
+			<span class="highlight"></span>
+			<label>Da data</label>
+			</div>
+			<div class="floating-label">      
+			<input class="floating-input" type="text" onclick="(this.value='<?php echo $oggi;?>')" id="a_data" placeholder=" ">
+			<span class="highlight"></span>
+			<label>A data</label>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Tabella novità -->	
+	<div id="target" class="col-md-8">
+	
+		<h2>Novità<span class="close"><class="" onclick="$('#target').toggle(); $('#espandi').toggleClass('col-md-4 col-md-12'); $('#espandi').addClass('margini-ristretti')"><a href="#"><i class="far fa-times-circle"></i></a></span></h2>
 
 
-
+		<div id="novita" class="tabella_responsiva">
+			<table class="max-height" id="tabellanovita"  class="tabella">
+				<thead>
+				<tr>
+				<th>#</th>
+				<th>autore</th>
+				<th>titolo</th>
+				<th>genere</th>
+				<th>data</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>	
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
+	
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	
+	
+	
 <!-- Add your site or app content here -->
  
  <div class="container">
@@ -104,7 +250,7 @@
       <div class="col-xs-12">
         
         
-        <p>Database ook Café</p>
+        <p>Database Book Café</p>
         
       </div>
     </div>
