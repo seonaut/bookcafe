@@ -65,7 +65,11 @@
 	<!-- Form ricerca -->
 
 	 <div id="espandi" class="col-md-4">
-		<h2>Ricerca <span id="conteggio"></span></h2>
+		<h2>Ricerca
+		<span id="conteggio"></span>
+		<span id="apri-novita">
+		<class="" onclick="$('#espandi').toggleClass('col-md-12 col-md-4'); $('#apri-novita').css('display', 'none'); $('#espandi').removeClass('margini-ristretti'); $('#target').toggle();"><a href="#">Novità <i class="fa fa-arrow-right" aria-hidden="true"></i>
+		</a></span></h2>
 		<div class="floating-form">
 			<div class="floating-label">      
 			<input class="floating-input" type="text" placeholder=" " id="autore">
@@ -148,7 +152,7 @@
 	<!-- Tabella novità -->	
 	<div id="target" class="col-md-8">
 	
-		<h2>Novità<span class="close"><class="" onclick="$('#target').toggle(); $('#espandi').toggleClass('col-md-4 col-md-12'); $('#espandi').addClass('margini-ristretti')"><a href="#"><i class="far fa-times-circle"></i></a></span></h2>
+		<h2>Novità<span class="close"><class="" onclick="$('#target').toggle(); $('#espandi').toggleClass('col-md-4 col-md-12'); $('#espandi').addClass('margini-ristretti'); $('#apri-novita').css('display', 'block');"><a href="#"><i class="far fa-times-circle"></i></a></span></h2>
 
 
 		<div id="novita" class="tabella_responsiva">
