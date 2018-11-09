@@ -470,10 +470,18 @@ label {
   to 	{ width:0; background:transparent; }
 }
 
-/* Pulsante di chiusura a destra */
+/* Pulsante di chiusura novità */
 .close {
 	float:right;
 	font-size: 80%;
+}
+
+/* Link riattivazione box novità */
+#apri-novita {
+	float:right;
+	font-size: 0.5em;
+	padding-top: 2%;
+	display: none;
 }
 
 /* Restringi margini di ricerca quando box novità viene chiuso */
@@ -501,7 +509,9 @@ label {
 /* Stile link */
 a {
     color: #000;
+	text-decoration: none;
 }
 a:hover {
     color: #f19319;
+	text-decoration: none;
 }
