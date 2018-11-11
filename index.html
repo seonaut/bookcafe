@@ -68,7 +68,7 @@
 		<h2>Ricerca
 		<span id="conteggio"></span>
 		<span id="apri-novita">
-		<class="" onclick="$('#espandi').toggleClass('col-md-12 col-md-4'); $('#apri-novita').css('display', 'none'); $('#espandi').removeClass('margini-ristretti'); $('#target').toggle();"><a href="#">Novità <i class="fa fa-arrow-right" aria-hidden="true"></i>
+		<class="" onclick="$('#espandi').toggleClass('col-md-12 col-md-4'); $('#apri-novita').css('display', 'none'); $('#espandi').removeClass('margini-ristretti'); $('#target').toggle();"><a href="javascript:void(0)">Novità <i class="fa fa-arrow-right" aria-hidden="true"></i>
 		</a></span></h2>
 		<div class="floating-form">
 			<div class="floating-label">      
@@ -152,24 +152,162 @@
 	<!-- Tabella novità -->	
 	<div id="target" class="col-md-8">
 	
-		<h2>Novità<span class="close"><class="" onclick="$('#target').toggle(); $('#espandi').toggleClass('col-md-4 col-md-12'); $('#espandi').addClass('margini-ristretti'); $('#apri-novita').css('display', 'block');"><a href="#"><i class="far fa-times-circle"></i></a></span></h2>
+		<h2>Novità<span class="close"><class="" onclick="$('#target').toggle(); $('#espandi').toggleClass('col-md-4 col-md-12'); $('#espandi').addClass('margini-ristretti'); $('#apri-novita').css('display', 'block');"><a href="javascript:void(0)"><i class="far fa-times-circle"></i></a></span></h2>
 
 
-		<div id="novita" class="tabella_responsiva">
-			<table class="max-height" id="tabellanovita"  class="tabella">
-				<thead>
+		<div id="novita">
+			<table id="tabellanovita">
+			  <thead>
 				<tr>
-				<th>#</th>
-				<th>autore</th>
-				<th>titolo</th>
-				<th>genere</th>
-				<th>data</th>
+				  <th scope="col">Cover</th>
+				  <th scope="col">Autore</th>
+				  <th scope="col">Titolo</th>
+				  <th scope="col">Genere</th>
+				  <th scope="col">Data</th>
 				</tr>
-				</thead>
-				<tbody>
-				<tr>	
+			  </thead>
+			  <tbody>
+				<tr>
+				  <td data-label="Cover">Img</td>
+				  <td data-label="Autore">Rollins, James</td>
+				  <td data-label="Titolo">La città sepolta</td>
+				  <td data-label="Genere">Avventura</td>
+				  <td data-label="Data">10/11/2018</td>
 				</tr>
-				</tbody>
+				<tr>
+				  <td data-label="Cover">Img</td>
+				  <td data-label="Autore">Sanderson, Brandon</td>
+				  <td data-label="Titolo">La via dei re</td>
+				  <td data-label="Genere">Fantasy</td>
+				  <td data-label="Data">10/11/2018</td>
+				</tr>
+				<tr>
+				  <td data-label="Cover">Img</td>
+				  <td data-label="Autore">Dumas, Alexandre</td>
+				  <td data-label="Titolo">I tre moschettieri</td>
+				  <td data-label="Genere">Avventura</td>
+				  <td data-label="Data">10/11/2018</td>
+				</tr>
+				<tr>
+				  <td data-label="Cover">Img</td>
+				  <td data-label="Autore">Bloch, Marc</td>
+				  <td data-label="Titolo">Apologia della storia</td>
+				  <td data-label="Genere">Saggistica</td>
+				  <td data-label="Data">10/11/2018</td>
+				</tr>
+				<tr>
+				  <td data-label="Cover">Img</td>
+				  <td data-label="Autore">De Lillo, Don</td>
+				  <td data-label="Titolo">Americana</td>
+				  <td data-label="Genere">Narrativa</td>
+				  <td data-label="Data">10/11/2018</td>
+				</tr>
+				<tr>
+				  <td data-label="Cover">Img</td>
+				  <td data-label="Autore">Rollins, James</td>
+				  <td data-label="Titolo">La città sepolta</td>
+				  <td data-label="Genere">Avventura</td>
+				  <td data-label="Data">10/11/2018</td>
+				</tr>
+				<tr>
+				  <td data-label="Cover">Img</td>
+				  <td data-label="Autore">Sanderson, Brandon</td>
+				  <td data-label="Titolo">La via dei re</td>
+				  <td data-label="Genere">Fantasy</td>
+				  <td data-label="Data">10/11/2018</td>
+				</tr>
+				<tr>
+				  <td data-label="Cover">Img</td>
+				  <td data-label="Autore">Dumas, Alexandre</td>
+				  <td data-label="Titolo">I tre moschettieri</td>
+				  <td data-label="Genere">Avventura</td>
+				  <td data-label="Data">10/11/2018</td>
+				</tr>
+				<tr>
+				  <td data-label="Cover">Img</td>
+				  <td data-label="Autore">Bloch, Marc</td>
+				  <td data-label="Titolo">Apologia della storia</td>
+				  <td data-label="Genere">Saggistica</td>
+				  <td data-label="Data">10/11/2018</td>
+				</tr>
+				<tr>
+				  <td data-label="Cover">Img</td>
+				  <td data-label="Autore">De Lillo, Don</td>
+				  <td data-label="Titolo">Americana</td>
+				  <td data-label="Genere">Narrativa</td>
+				  <td data-label="Data">10/11/2018</td>
+				</tr>
+				<tr>
+				  <td data-label="Cover">Img</td>
+				  <td data-label="Autore">Rollins, James</td>
+				  <td data-label="Titolo">La città sepolta</td>
+				  <td data-label="Genere">Avventura</td>
+				  <td data-label="Data">10/11/2018</td>
+				</tr>
+				<tr>
+				  <td data-label="Cover">Img</td>
+				  <td data-label="Autore">Sanderson, Brandon</td>
+				  <td data-label="Titolo">La via dei re</td>
+				  <td data-label="Genere">Fantasy</td>
+				  <td data-label="Data">10/11/2018</td>
+				</tr>
+				<tr>
+				  <td data-label="Cover">Img</td>
+				  <td data-label="Autore">Dumas, Alexandre</td>
+				  <td data-label="Titolo">I tre moschettieri</td>
+				  <td data-label="Genere">Avventura</td>
+				  <td data-label="Data">10/11/2018</td>
+				</tr>
+				<tr>
+				  <td data-label="Cover">Img</td>
+				  <td data-label="Autore">Bloch, Marc</td>
+				  <td data-label="Titolo">Apologia della storia</td>
+				  <td data-label="Genere">Saggistica</td>
+				  <td data-label="Data">10/11/2018</td>
+				</tr>
+				<tr>
+				  <td data-label="Cover">Img</td>
+				  <td data-label="Autore">De Lillo, Don</td>
+				  <td data-label="Titolo">Americana</td>
+				  <td data-label="Genere">Narrativa</td>
+				  <td data-label="Data">10/11/2018</td>
+				</tr>
+				<tr>
+				  <td data-label="Cover">Img</td>
+				  <td data-label="Autore">Rollins, James</td>
+				  <td data-label="Titolo">La città sepolta</td>
+				  <td data-label="Genere">Avventura</td>
+				  <td data-label="Data">10/11/2018</td>
+				</tr>
+				<tr>
+				  <td data-label="Cover">Img</td>
+				  <td data-label="Autore">Sanderson, Brandon</td>
+				  <td data-label="Titolo">La via dei re</td>
+				  <td data-label="Genere">Fantasy</td>
+				  <td data-label="Data">10/11/2018</td>
+				</tr>
+				<tr>
+				  <td data-label="Cover">Img</td>
+				  <td data-label="Autore">Dumas, Alexandre</td>
+				  <td data-label="Titolo">I tre moschettieri</td>
+				  <td data-label="Genere">Avventura</td>
+				  <td data-label="Data">10/11/2018</td>
+				</tr>
+				<tr>
+				  <td data-label="Cover">Img</td>
+				  <td data-label="Autore">Bloch, Marc</td>
+				  <td data-label="Titolo">Apologia della storia</td>
+				  <td data-label="Genere">Saggistica</td>
+				  <td data-label="Data">10/11/2018</td>
+				</tr>
+				<tr>
+				  <td data-label="Cover">Img</td>
+				  <td data-label="Autore">De Lillo, Don</td>
+				  <td data-label="Titolo">Americana</td>
+				  <td data-label="Genere">Narrativa</td>
+				  <td data-label="Data">10/11/2018</td>
+				</tr>
+			  </tbody>
 			</table>
 		</div>
 	</div>
@@ -260,6 +398,10 @@
     </div>
   </div>
 </footer>
+<!-- Uno script per settare la colonna novità alla stessa altezza di quella del box di ricerca -->
+<script>
+$("#target").css({'height':($("#espandi").height()+'px')});
+</script>
 
 </body>
 
