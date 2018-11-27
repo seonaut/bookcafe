@@ -8,7 +8,7 @@ body {
     margin: 0;
 }
 
-footer,
+
 header,
 main {
     display: block
@@ -16,15 +16,6 @@ main {
 
 [hidden] {
     display: none
-}
-
-h1 {
-    font-size: 2em;
-    margin: .67em 0
-}
-
-img {
-    border: 0
 }
 
 @media print {
@@ -36,20 +27,12 @@ img {
         box-shadow: none!important;
         text-shadow: none!important
     }
-    img {
-        page-break-inside: avoid
-    }
-    img {
-        max-width: 100%!important
-    }
     h2,
-    h3,
     p {
         orphans: 3;
         widows: 3
     }
-    h2,
-    h3 {
+    h2 {
         page-break-after: avoid
     }
 }
@@ -75,54 +58,24 @@ body {
     background-color: #fff
 }
 
-img {
-    vertical-align: middle
-}
-
-.img-responsive {
-    display: block;
-    max-width: 100%;
-    height: auto
-}
-
 [role=button] {
     cursor: pointer
 }
 
-.h1,
+
 .h2,
-.h3,
-.h5,
-h1,
-h2,
-h3,
-h5 {
+h2 {
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     line-height: 1.1;
     color: #555
 }
 
-.h1,
+
 .h2,
-.h3,
-h1,
-h2,
-h3 {
+h2 {
     margin-top: 25px;
     margin-bottom: 12.5px
-}
-
-
-.h5,
-h5 {
-    margin-top: 12.5px;
-    margin-bottom: 12.5px
-}
-
-.h1,
-h1 {
-    font-size: 63px
 }
 
 .h2,
@@ -130,22 +83,8 @@ h2 {
     font-size: 27px
 }
 
-.h3,
-h3 {
-    font-size: 20px
-}
-
-.h5,
-h5 {
-    font-size: 18px
-}
-
 p {
     margin: 0 0 12.5px
-}
-
-.text-center {
-    text-align: center
 }
 
 .container {
@@ -198,8 +137,7 @@ p {
     clear: both
 }
 
-.col-md-4,
-.col-md-8,
+
 .col-xs-12 {
     position: relative;
     min-height: 1px;
@@ -215,19 +153,6 @@ p {
     width: 100%
 }
 
-@media (min-width:992px) {
-    .col-md-4,
-    .col-md-8 {
-        float: left
-    }
-    .col-md-4 {
-        width: 33.33333%
-    }
-    .col-md-8 {
-        width: 66.66667%
-    }
-}
-
 @-ms-viewport {
     width: device-width
 }
@@ -240,10 +165,8 @@ body {
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#FF008080", endColorstr="#FF329999", GradientType=0)
 }
 
-.white-text-container h1,
+
 .white-text-container h2,
-.white-text-container h3,
-.white-text-container h5,
 .white-text-container p {
     color: #fff
 }
@@ -255,10 +178,6 @@ body {
 
 .section-container {
     padding: 60px 0 40px
-}
-
-.footer-container {
-    padding: 20px 0 30px
 }
 
 .background-color-layer {
@@ -298,115 +217,9 @@ body {
     }
 }
 
-.h5,
-h5 {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700
-}
-
-/* Un po' di stile per i bottoni */
-
-.button {
-	font-family: 'Raleway', sans-serif;
-	border-radius: 90px;
-	background-color: #F08700;
-	border: none;
-	color: #fff;
-	text-align: center;
-	font-size: 1em;
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	transition: all 0.5s;
-	cursor: pointer;
-	margin: 5px;
-}
-
-.button:hover {
-	background-color: #f19319;
-}
-
-.button span {
-	cursor: pointer;
-	display: inline-block;
-	position: relative;
-	transition: 0.5s;
-}
-
-.button span:after {
-	font-family: FontAwesome;
-	content: '\f004';
-	position: absolute;
-	opacity: 0;
-	top: 0;
-	right: -20px;
-	transition: 0.5s;
-}
-
-.button:hover span {
-	padding-right: 25px;
-}
-
-.button:hover span:after {
-	opacity: 1;
-	right: 0;
-}
-
-/* Bottone chiudi modale */
-.button-close {
-	font-family: 'Raleway', sans-serif;
-	width: 2em;
-	height: 2em;
-	border-radius: 90px;
-	background-color: #F08700;
-	border: none;
-	color: #fff;
-	text-align: center;
-	font-size: 1em;
-	transition: all 0.5s;
-	cursor: pointer;
-	margin: 5px;
-}
-
-.button-close:hover {
-	background-color: #f19319;
-}
-
-/* Bottone flottante */
-#preferiti {
-    position: fixed;
-    top: 3%;
-    right: 3%;
-    z-index: 999999;
-}
-
-@media (max-width: 768px) {
-#preferiti {
-    position: fixed;
-	top: auto;
-    bottom: 3%;
-    right: 3%;
-    z-index: 999999;
-}
-}
-
-#chiusura {
-    position: fixed;
-    top: 3%;
-    right: 3%;
-    z-index: 999999;
-}
-
-/* Stile per numero complessivo volumi in box ricerca */
-.conteggio-ricerca {
-	font-size: 50%;
-}
-
-
 /* Stile link */
 a {
-    color: #000;
+    color: #555;
 	text-decoration: none;
 }
 a:hover {
@@ -414,213 +227,7 @@ a:hover {
 	text-decoration: none;
 }
 
-/* Stile link per autori in tabella */
-.autori:hover {
-	color: #f19319;
-	text-decoration: none;
-}
-
-/* Stile link per titoli in tabella */
-.titoli:hover {
-	color: #f19319;
-	text-decoration: none;
-}
-
-/* Stile link per copertine */
-.copertine:hover {
-	opacity: 0.5;
-}
-
-/* Stile tabella responsiva */
-table {
-	border: 0px solid #ccc;
-	border-collapse: collapse;
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	table-layout: fixed;
-	display: table;
-}
-
-table tr {
-	background-color: #f9f9f9;
-	border: 8px solid #fff;
-	padding: .35em;
-	color: #555;
-	font-size: 14px;
-}
-
-tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-table th {
-	background-color: #d8d8d8;
-	color: #000;
-	width: 100%
-}
-
-thead th {
-	position: sticky;
-	top: -1.1%;
-}
-
-#tabellanovita thead {
-	display:none;
-}
-
-table tbody {
-	overflow-y: auto;
-  }
-  
-table th,
-table td {
-	padding: .625em;
-	text-align: center;
-}
-
-table th {
-	font-size: .85em;
-	letter-spacing: .1em;
-	text-transform: uppercase;
-}	
-
-@media screen and (min-width: 600px) {
-td.copertine {
-    width: 15%;
-}
-}
-
-
-
 /* Imposta altezza massima tabella risultati */
 div#risultati {
 	max-height: 500px !important;
-}
-
-@media 
-only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px)  {
-
-table { 
-	width: 100%; 
-	}
-
-table, thead, tbody, th, td, tr { 
-	display: block; 
-	}
-	
-thead tr { 
-	position: absolute;
-	top: -9999px;
-	left: -9999px;
-	}
-	
-tr {
-	border: 1px solid #ccc;
-	}
-	
-td { 
-	border: none;
-	position: relative;
-	padding-left: 50%; 
-	}
-
-td:before { 
-	float: left;
-	top: 6px;
-	left: 6px;
-	width: 45%; 
-	padding-right: 10px; 
-	white-space: nowrap;
-	content: attr(data-label);
-	text-align: left;
-	color: #555;
-	font-weight: bold;
-	font-style: normal;
-	}
-
-	
-table td {
-	min-height: 3em;
-	text-align: right
-	}
-	
-}
-
-/* Hover icone download in scheda libro */
-.download {
-	position: relative;
-	display: inline-block;
-    }
-
-.download .img-top {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 99;
-    }
-  
-.download:hover .img-top {
-    display: inline;
-    }
-
-/* Centra orizzontalmente le copertine nel div */
-.cover {
-    text-align:center;
-}
-
-/* Nessun margine superiore e inferiore per autore e titolo in scheda libro */
-.nomargini {
-	margin-bottom: 0px !important;
-	margin-top: 0px !important;
-	text-align: right;
-	padding-bottom: 1em;
-	color: #555 !important;
-}
-
-/* Padding riga autore su schermi piccoli */
-@media screen and (max-width: 800px) {
-.autore-scheda {
-	padding-top: 2em;
-}
-}
-
-/* Padding laterale nel modale fullscreen */
-div#fullscreen-modal {
-	padding-left: 3%;
-	padding-right: 3%;
-}
-
-/* Accertati che l'immagine di copertina sia responsiva */
-img#cover {
-    width: auto;
-    max-height: 90vh;
-	max-width: 90%;
-	border-radius: 8px;
-	
-}
-
-@media screen and (max-width: 720px) {
-img#cover {
-    width: auto;
-    max-height: 50vh;
-	max-width: 90%;
-	border-radius: 8px;
-	}
-}
-
-/* Scheda libro con colonna sinistra fissa e destra scrollabile su schermi larghi */
-@media screen and (min-width: 720px) {
-div#descrizione {
-	float:right;
-	overflow:hidden
-	}
-div#copertina {
-	position:fixed;
-	left:2em;
-	top:2em;
-	float:left;
-	}
 }
